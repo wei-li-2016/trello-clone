@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import styled from 'styled-components';
 
+import BoardTitleInput from './BoardTitleInput';
 
 const CancelButton = styled.button`
     width: auto;
@@ -54,17 +55,19 @@ let BoardTitleForm = (props) => {
     const { handleSubmit, cancelAction } = props;
 
     return (
-        <form onSubmit={handleSubmit}>
-            <Field
-                name="boardTitle"
-                component="input"
-                type="text"
-            />
+        <div>
+            <form onSubmit={handleSubmit}>
+                <Field
+                    name="boardTitle"
+                    component="input"
+                    type="text"
+                />
+            </form>
             <ButtonWrapper>
                 <CancelButton onClick={() => cancelAction()}>Cancel</CancelButton>
-                <SubmitButton type="button">Create</SubmitButton>
+                <SubmitButton onClick={handleSubmit} type="button">Create</SubmitButton>
             </ButtonWrapper>
-        </form>
+        </div>
     )
 }
 

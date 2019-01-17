@@ -46,7 +46,7 @@ const BoardNamingTitle = styled.h5`
 
 class ActiveCreateBoard extends Component {
   
-  onSubmit = (values) => {
+  submit = (values) => {
     console.log('handling form', values)
   }
 
@@ -65,7 +65,7 @@ class ActiveCreateBoard extends Component {
         <BodyWrapper>
           <BoardNamingTitle>What shall we call the board?</BoardNamingTitle>
           <BoardTitleForm
-            onSubmit={this.onSubmit}
+            onSubmit={this.submit}
             cancelAction={cancelCreatingBoard}
           />
         </BodyWrapper>
