@@ -1,9 +1,6 @@
 import { RECEIVE_NEW_BOARD } from '../Actions/ActionTypes';
 
-const initialState = {
-  title: null,
-  id: null,
-}
+const initialState = [];
 
 export default function(state = initialState, action) {
   switch(action.type) {

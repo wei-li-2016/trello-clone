@@ -1,23 +1,48 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components'
+
 import CreateBoardContainer from './boardCreation/CreateBoardContainer';
+import ShowAllBoards from './ShowAllBoards';
 
 const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%); 
+  display: flex;
   padding: 60px 35px;
+  flex-wrap: wrap;
 `
 
 class BoardContainer extends Component {
+
+  renderAllBoard = () => {
+    const { boardsCollection } = this.props
+    boardsCollection.map(board => {
+      return <ShowAllBoards key={board.title} title={board.title} />
+    })
+  }
+
+  shouldComponentUpdate(nextProps) {
+    console.log(this.props.boardsCollection, nextProps.boardsCollection)
+    if(this.props.boardsCollection.length !== nextProps.boardsCollection.length) {
+      this.renderAllBoard()
+      return true
+    }
+  }
+
   render() {
     return (
       <Wrapper>
         <CreateBoardContainer />
+        {this.renderAllBoard()}
+        <ShowAllBoards title="asd" />
       </Wrapper>
     )
   }
 }
 
-export default connect(null)(BoardContainer);
+function mapStateToProps({boardsCollection}) {
+  return {
+    boardsCollection
+  }
+}
+
+export default connect(mapStateToProps)(BoardContainer);
