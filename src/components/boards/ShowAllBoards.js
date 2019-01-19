@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
+import ShowActiveBoard from './ShowActiveBoard'
 
 const Title = styled.h2`
   color: black;
@@ -31,9 +34,11 @@ const BoardWrapper = styled.div`
 `
 
 const ShowAllBoards = ({title, id}) => (
-  <BoardWrapper>
-    <Title>{title}</Title>
-  </BoardWrapper>
+  <Link to={`/b/${id}`} component={ShowActiveBoard}>
+    <BoardWrapper>
+      <Title>{title}</Title>
+    </BoardWrapper>
+  </Link>
 )
 
 export default ShowAllBoards
