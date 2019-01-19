@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-export default class ShowActiveBoard extends Component {
+import selectActiveBoard from './../../Actions/SelectActiveBoard'
+
+class ShowActiveBoard extends Component {
   static PropTypes = {
+    selectActiveBoard: PropTypes.func.isRequired
+  }
 
+  componentDidMount() {
+    const { match, selectActiveBoard } = this.props
+    selectActiveBoard(match.params.id)
   }
 
   render() {
@@ -14,3 +22,5 @@ export default class ShowActiveBoard extends Component {
     )
   }
 }
+
+export default connect(null, { selectActiveBoard })(ShowActiveBoard)

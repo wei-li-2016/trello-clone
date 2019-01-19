@@ -16,7 +16,7 @@ class BoardContainer extends Component {
   renderAllBoard = () => {
     const { boardsCollection } = this.props
     return boardsCollection.map(board => {
-      return <ShowAllBoards id={board.id} key={board.title} title={board.title} />
+      return <ShowAllBoards id={board.id} key={board.id} title={board.title} />
     })
   }
 
