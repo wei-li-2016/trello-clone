@@ -14,10 +14,15 @@ const Wrapper = styled.div`
 class BoardContainer extends Component {
 
   renderAllBoard = () => {
-    const { boardsCollection } = this.props
-    return boardsCollection.map(board => {
-      return <ShowAllBoards id={board.id} key={board.id} title={board.title} />
-    })
+    const boardsCollection = JSON.parse(localStorage.getItem('boardCollection'))
+
+    if (boardsCollection && boardsCollection.length) {
+      return boardsCollection.map(board => {
+        return (
+          <ShowAllBoards id={board.id} key={board.id} title={board.title} />
+        )
+      })
+    }
   }
 
   render() {

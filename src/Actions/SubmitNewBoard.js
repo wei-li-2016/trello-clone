@@ -1,7 +1,8 @@
 import {
   SUBMIT_NEW_BOARD,
   RECEIVE_NEW_BOARD,
-  CLEAN_NEW_BOARD
+  CLEAN_NEW_BOARD,
+  STORE_NEW_BOARD,
 } from './ActionTypes';
 import Store from '../Store';
 
@@ -15,5 +16,6 @@ export default function submitNewBoard(title) {
     }
     dispatch({ type: RECEIVE_NEW_BOARD, payload: newBoard })
     dispatch({ type: CLEAN_NEW_BOARD })
+    dispatch({ type: STORE_NEW_BOARD })
   }
 }
