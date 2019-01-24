@@ -15,7 +15,7 @@ export default function submitNewBoard(title) {
       id: Store.getState().newBoard.id,
     }
     dispatch({ type: RECEIVE_NEW_BOARD, payload: newBoard })
-    dispatch({ type: CLEAN_NEW_BOARD })
     dispatch({ type: STORE_NEW_BOARD })
+    dispatch({ type: CLEAN_NEW_BOARD })
   }
 }
