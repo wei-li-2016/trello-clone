@@ -3,8 +3,6 @@ import {
   CREATE_NEW_BOARD,
   CANCEL_NEW_BOARD,
   SUBMIT_NEW_BOARD,
-  CLEAN_NEW_BOARD,
-  SELECT_ACTIVE_BOARD,
 } from './../Actions/ActionTypes'
 
 const initialState = {

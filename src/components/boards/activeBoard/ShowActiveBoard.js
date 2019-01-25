@@ -15,17 +15,18 @@ class ShowActiveBoard extends Component {
       match, selectActiveBoard
     } = this.props
     selectActiveBoard(match.params.id)
-  }
-
-  componentWillUnmount() {
-    localStorage.removeItem('activeBoard')
+    console.log(this.props.activeBoard)
   }
 
   getTitle = () => {
-    return "random title for now"
+    return this.props.activeBoard.title
   }
 
   render() {
+    const { activeBoard } = this.props
+    if (activeBoard.isFetching) {
+      return <div>loading</div>
+    }
     return (
       <div>
         <ActiveBoardTitle>
