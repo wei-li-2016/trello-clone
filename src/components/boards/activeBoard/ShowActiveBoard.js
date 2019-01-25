@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 
 import selectActiveBoard from './../../../Actions/SelectActiveBoard'
 import ActiveBoardTitle from './ActiveBoardTitle'
+import ListWrapper from './ListWrapper'
+import CreateNewList from './CreateNewList'
 
 class ShowActiveBoard extends Component {
   static propTypes = {
@@ -25,13 +27,16 @@ class ShowActiveBoard extends Component {
   render() {
     const { activeBoard } = this.props
     if (activeBoard.isFetching) {
-      return <div>loading</div>
+      return <div>loading...</div>
     }
     return (
       <div>
         <ActiveBoardTitle>
           {this.getTitle()}
         </ActiveBoardTitle>
+        <ListWrapper>
+          <CreateNewList />
+        </ListWrapper>
       </div>
     )
   }
