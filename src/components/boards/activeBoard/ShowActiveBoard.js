@@ -22,17 +22,7 @@ class ShowActiveBoard extends Component {
   }
 
   getTitle = () => {
-    try {
-      if (localStorage.getItem('activeBoard') !== null) {
-        let activeBoard = JSON.parse(localStorage.getItem('activeBoard'))
-        return activeBoard.title
-      }
-    } catch (error) {
-      console.log(error)
-      return undefined
-    }
-
-    return this.props.activeBoard.title
+    return "random title for now"
   }
 
   render() {

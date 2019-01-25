@@ -1,8 +1,6 @@
 import {
   SUBMIT_NEW_BOARD,
-  RECEIVE_NEW_BOARD,
-  CLEAN_NEW_BOARD,
-  STORE_NEW_BOARD,
+  STORE_NEW_BOARD_TO_COLLECTION,
 } from './ActionTypes';
 import Store from '../Store';
 
@@ -11,11 +9,9 @@ export default function submitNewBoard(title) {
     dispatch({ type: SUBMIT_NEW_BOARD, payload: title })
 
     const newBoard = {
-      title: Store.getState().newBoard.title,
       id: Store.getState().newBoard.id,
+      title: Store.getState().newBoard.title,
     }
-    dispatch({ type: RECEIVE_NEW_BOARD, payload: newBoard })
-    dispatch({ type: STORE_NEW_BOARD })
-    dispatch({ type: CLEAN_NEW_BOARD })
+    dispatch({ type: STORE_NEW_BOARD_TO_COLLECTION, payload: newBoard })
   }
 }

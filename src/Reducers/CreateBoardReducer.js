@@ -1,8 +1,10 @@
+import { v4 } from 'node-uuid'
 import {
   CREATE_NEW_BOARD,
   CANCEL_NEW_BOARD,
   SUBMIT_NEW_BOARD,
   CLEAN_NEW_BOARD,
+  SELECT_ACTIVE_BOARD,
 } from './../Actions/ActionTypes'
 
 const initialState = {
@@ -11,8 +13,6 @@ const initialState = {
   id: null,
   success: false,
 }
-
-let initialId = 0
 
 export default function (state = initialState, action) {
   switch (action.type) {
@@ -37,14 +37,7 @@ export default function (state = initialState, action) {
         ...state,
         isBoardOpen: false,
         title: action.payload,
-        id: initialId++,
-      }
-    case CLEAN_NEW_BOARD:
-      return {
-        ...state,
-        title: null,
-        id: null,
-        success: null,
+        id: v4(),
       }
     default:
       return state;
