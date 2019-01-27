@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   margin: 0 20px;
   background-color: rgb(255, 255, 255);
@@ -22,8 +22,8 @@ const Text = styled.h4`
   color: #333;
 `
 
-const CreateNewList = () => (
-  <Wrapper>
+const CreateNewList = ({addList}) => (
+  <Wrapper onClick={addList}>
     <Text>Add a list...</Text>
   </Wrapper>
 )
