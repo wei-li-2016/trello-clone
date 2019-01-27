@@ -4,11 +4,12 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   display: flex;
   margin: 0 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255, 0.45);
   padding: 15px 75px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   transition: all 150ms ease-in-out;
   cursor: pointer;
+  height: 75px;
 
   &:hover {
     cursor: pointer;

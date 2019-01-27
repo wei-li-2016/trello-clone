@@ -3,7 +3,6 @@ import {
   SELECT_ACTIVE_BOARD_SUCCESS,
   LIST_EDIT_MODE_ENABLED,
   STOP_EDITING_LIST,
-  SUBMIT_LIST,
 } from '../Actions/ActionTypes'
 
 const initialState = {
@@ -11,7 +10,6 @@ const initialState = {
   id: null,
   isFetching: false,
   isEditingList: false,
-  listItems: [],
 }
 
 export default function(state = initialState, action) {
@@ -37,10 +35,6 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isEditingList: action.payload
-      }
-    case SUBMIT_LIST:
-      return {
-        ...state,
       }
     default:
       return {...state}

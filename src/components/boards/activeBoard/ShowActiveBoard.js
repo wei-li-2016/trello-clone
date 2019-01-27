@@ -9,6 +9,7 @@ import ActiveBoardTitle from './ActiveBoardTitle'
 import ListWrapper from './ListWrapper'
 import CreateNewList from './CreateNewList'
 import ListEditingMode from './ListEditingMode'
+import ListItemsContainer from './ListItemsContainer'
 
 class ShowActiveBoard extends Component {
   static propTypes = {
@@ -28,7 +29,6 @@ class ShowActiveBoard extends Component {
   }
 
   handleListSubmit = values => {
-    console.log(values.listItem)
     this.props.submitList(values.listItem)
   }
 
@@ -43,6 +43,7 @@ class ShowActiveBoard extends Component {
           {this.getTitle()}
         </ActiveBoardTitle>
         <ListWrapper>
+          <ListItemsContainer />
           {
             activeBoard.isEditingList 
             ? <ListEditingMode onSubmit={this.handleListSubmit} />
