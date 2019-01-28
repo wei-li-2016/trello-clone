@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import { connect } from 'react-redux'
-import { Wrapper } from './CreateNewList';
 import DisableListEditMode from './DisableListEditMode';
 import disableListEditMode from './../../../Actions/DisableListEditMode';
 import { reduxForm, Field, reset } from 'redux-form';
 import BoardTitleInput from './../boardCreation/BoardTitleInput';
 
-const ListEditingModeWrapper = Wrapper.extend`
-  padding: 15px 10px;
-  height: 100px;
+const ListEditingModeWrapper = styled.div`
+  padding: 20px 12px;
+  height: auto;
+  background-color: rgba(255,255,255, 0.45);
+  display: flex;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  
 `
 
 class ListEditingMode extends Component {
@@ -39,7 +42,7 @@ function mapStateToProps({ activeBoard }) {
 function validate(values) {
   let errors = {};
 
-  if(!values.listItem) {
+  if (!values.listItem) {
     errors.listItem = 'give me a name!'
   }
 

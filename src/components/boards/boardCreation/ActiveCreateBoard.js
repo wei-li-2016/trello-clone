@@ -35,7 +35,6 @@ const CloseBoardIcon = styled.img`
 const BodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
   margin: 10px;
 `
 
@@ -43,7 +42,6 @@ const BoardNamingTitle = styled.h5`
   color: white;
   text-shadow: 0px 0px 3px #000;
   font-weight: 400;
-  margin: 20px 19px 0 33px;
 `
 
 class ActiveCreateBoard extends Component {

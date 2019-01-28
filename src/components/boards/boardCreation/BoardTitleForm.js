@@ -19,7 +19,7 @@ const CancelButton = styled.button`
     &:hover {
         transition: all 200ms ease-in-out;
         background-color: none;
-        color: #333;
+        color: #000;
     }
 `
 
@@ -40,7 +40,7 @@ const SubmitButton = styled.button`
     transition: all 200ms ease-in-out;
     &:hover {
         transition: all 200ms ease-in-out;
-        color: #9fe7a4;
+        color: #333;
     }
 `
 

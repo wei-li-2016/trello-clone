@@ -17,6 +17,7 @@ const DisableButton = styled.svg`
   transition: all 200ms ease-in-out;
   background-image: url(${CloseIcon});
   background-repeat: no-repeat;
+  cursor: pointer;
   &:hover {
       transition: all 200ms ease-in-out;
       transform: scale(1.25) rotate(4.5deg);
