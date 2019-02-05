@@ -14,14 +14,14 @@ class CreateCardContainer extends Component {
   }
 
   renderCard = () => {
-    const { activeBoardData } = this.props;
-    return activeBoardData.listItems[this.props.listId].cards.map((card, i) => {
+    const { activeBoardData, listId } = this.props;
+    return activeBoardData.listItems[listId].cards.map((card, i) => {
       return <Card key={i} title={card.name} />
     })
   }
 
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit, listId } = this.props;
     return (
       <div>
         <form onSubmit={handleSubmit(this.submit)}>

@@ -10,7 +10,7 @@ class ListItemsContainer extends Component {
     const mappedList = mapValues(activeBoardData.listItems, list => list.name);
     const mappedKeys = Object.keys(mappedList)
     const mappedValues = Object.values(mappedList);
-    console.log(mappedList, mappedKeys);
+
     return mappedKeys.map((id, i) => {
       return <ListItem id={id} key={i} name={mappedList[id]} />
     })
