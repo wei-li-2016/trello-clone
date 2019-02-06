@@ -18,6 +18,8 @@ const ListReducer = (state = {}, action) => {
         }
       };
     case SUBMIT_NEW_CARD:
+
+      console.log(action.payload.cardName);
       const currentList = state[action.payload.listId];
       currentList.cards.push({name: action.payload.cardName});
       return {
