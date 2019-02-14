@@ -1,4 +1,4 @@
-import { SUBMIT_NEW_CARD} from './ActionTypes'
+import { SUBMIT_NEW_CARD } from './ActionTypes'
 
 export default function submitNewCard(card, cardId, listId) {
   return dispatch => {

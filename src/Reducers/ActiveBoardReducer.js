@@ -37,6 +37,8 @@ export default function(state = initialState, action) {
         isEditingList: action.payload
       }
     default:
-      return {...state}
+      return {
+        ...state
+      }
   } 
 }

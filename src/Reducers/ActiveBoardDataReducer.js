@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import {
   SUBMIT_LIST,
-  SUBMIT_NEW_CARD
+  SUBMIT_NEW_CARD,
+  HANDLE_DROP
 } from './../Actions/ActionTypes'
 import uniqueId from 'lodash/uniqueId'
 
@@ -20,12 +21,29 @@ const ListReducer = (state = {}, action) => {
     case SUBMIT_NEW_CARD:
 
       console.log(action.payload.cardName);
-      const currentList = state[action.payload.listId];
-      currentList.cards.push({name: action.payload.cardName});
+      const { listId, cardName, cardId } = action.payload;
+      const currentList = state[listId];
+      currentList.cards.push({
+        name: cardName,
+        cardId: cardId
+      })
       return {
         ...state,
-        [action.payload.listId]: currentList,
+        [listId]: currentList,
       };
+    
+    case HANDLE_DROP:
+      const { cardId, cardName, listId, newListId } = action.payload;
+      const currentList = state[newListId];
+      currentList.cards.push({
+        name: cardName,
+        cardId,
+        listId: newListId
+      });
+      return {
+        ...state,
+        [newListId]: currentList
+      }
     default: 
       return state;
   }
