@@ -15,6 +15,6 @@ export const saveState = boards => {
     const serializedBoardCollectionState = JSON.stringify(boards)
     localStorage.setItem('boardsCollection', serializedBoardCollectionState)
   } catch (err) {
-    console.log(err)
+    new Error(err)
   }
 }

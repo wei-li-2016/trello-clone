@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Route, Switch} from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import BoardContainer from './boards/BoardContainer'
 import ShowActiveBoard from './boards/activeBoard/ShowActiveBoard'
 import NotFound from './NotFound'
 import Header from './Header'
+import { DragDropContext } from 'react-dnd'
+import HTML5Backend from 'react-dnd-html5-backend'
 
 class App extends Component {
   render() {
