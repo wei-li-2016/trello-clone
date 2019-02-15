@@ -5,9 +5,6 @@ import CreateBoard from './CreateBoard';
 import ActiveCreateBoard from './ActiveCreateBoard';
 
 class CreateBoardContainer extends Component {
-  static propTypes = {
-    newBoard: PropTypes.object
-  }
 
   render() {
     const { newBoard } = this.props;
@@ -18,7 +15,9 @@ class CreateBoardContainer extends Component {
     )
   }
 }
-
+CreateBoardContainer.PropTypes = {
+  newBoard: PropTypes.object
+}
 function mapStateToProps({ newBoard }) {
   return {
     newBoard
