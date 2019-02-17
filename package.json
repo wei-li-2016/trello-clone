@@ -32,6 +32,7 @@
     "promise": "^8.0.2",
     "raf": "^3.4.1",
     "react": "^16.7.0",
+    "react-animations": "^1.0.0",
     "react-dev-utils": "^7.0.1",
     "react-dnd": "^7.0.2",
     "react-dnd-html5-backend": "^7.0.2",
