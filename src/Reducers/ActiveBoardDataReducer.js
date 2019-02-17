@@ -8,7 +8,7 @@ import uniqueId from 'lodash/uniqueId'
 
 const ListReducer = (state = {}, action) => {
   const listId = uniqueId("list_");
-  switch(action.type) {
+  switch (action.type) {
     case SUBMIT_LIST:
       return {
         ...state,
@@ -31,10 +31,12 @@ const ListReducer = (state = {}, action) => {
         ...state,
         [listId]: currentList,
       };
-    
+
     case HANDLE_DROP:
       const { cardId, cardName, listId, newListId } = action.payload;
       const currentList = state[newListId];
+      const removeCard = state[listId].cards.find(card => card.cardId === cardId);
+      const oldList = state[listId].cards.splice(removeCard, 1);
       currentList.cards.push({
         name: cardName,
         cardId,
@@ -42,9 +44,9 @@ const ListReducer = (state = {}, action) => {
       });
       return {
         ...state,
-        [newListId]: currentList
+        [newListId]: currentList,
       }
-    default: 
+    default:
       return state;
   }
 }
