@@ -1,8 +1,8 @@
 import {
   STOP_EDITING_LIST,
-} from './ActionTypes'
+} from './ActionTypes';
 
 
 export default function disableListEditMode() {
-  return dispatch => dispatch({ type: STOP_EDITING_LIST, payload: false })
+  return dispatch => dispatch({ type: STOP_EDITING_LIST, payload: false });
 }

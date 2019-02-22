@@ -1,4 +1,4 @@
-import { CANCEL_NEW_BOARD } from './ActionTypes'
+import { CANCEL_NEW_BOARD } from './ActionTypes';
 
 export default function cancelCreatingBoard() {
   return {
