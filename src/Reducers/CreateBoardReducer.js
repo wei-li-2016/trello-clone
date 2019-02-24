@@ -1,9 +1,10 @@
 import uniqueId from 'lodash/uniqueId'
+
 import {
   CREATE_NEW_BOARD,
   CANCEL_NEW_BOARD,
   SUBMIT_NEW_BOARD,
-} from './../Actions/ActionTypes'
+} from '~Actions/ActionTypes';
 
 const initialState = {
   isBoardOpen: false,
@@ -12,8 +13,11 @@ const initialState = {
   success: false,
 }
 
+
 export default function (state = initialState, action) {
+
   switch (action.type) {
+
     case CREATE_NEW_BOARD:
       return {
         ...state,
@@ -21,7 +25,8 @@ export default function (state = initialState, action) {
         isBoardOpen: true,
         id: null,
         success: false,
-      }
+      };
+
     case CANCEL_NEW_BOARD:
       return {
         ...state,
@@ -29,7 +34,8 @@ export default function (state = initialState, action) {
         isBoardOpen: false,
         id: null,
         success: false,
-      }
+      };
+
     case SUBMIT_NEW_BOARD:
       return {
         ...state,
@@ -37,7 +43,10 @@ export default function (state = initialState, action) {
         title: action.payload,
         id: uniqueId(''),
       }
+
     default:
       return state;
+
   }
+
 }
