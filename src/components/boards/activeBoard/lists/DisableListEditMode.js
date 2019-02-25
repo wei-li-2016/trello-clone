@@ -7,7 +7,6 @@ const DisableWrapper = styled.div`
   left: 30px;
   top: -24px;
   z-index: 9999;
-    
 `
 
 const DisableButton = styled.svg`
@@ -19,8 +18,8 @@ const DisableButton = styled.svg`
   background-repeat: no-repeat;
   cursor: pointer;
   &:hover {
-      transition: all 200ms ease-in-out;
-      transform: scale(1.25) rotate(4.5deg);
+    transition: all 200ms ease-in-out;
+    transform: scale(1.25) rotate(4.5deg);
   }
 `
 
