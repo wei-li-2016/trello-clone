@@ -5,6 +5,7 @@
     "transform-class-properties",
     "transform-object-rest-spread",
     "transform-class-properties",
-    "transform-decorators"
+    "transform-decorators",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }]
   ]
 }
